@@ -40,7 +40,6 @@ The campaign independently rediscovered **gh-144681**: a JIT assertion failure a
 
 - **Target**: CPython 3.15.0a7+ (`--with-pydebug --enable-experimental-jit`)
 - **Platform**: WSL2 Ubuntu 22.04
-- **Campaign period**: February 26 – April 2026
 - **Instances**: 6 parallel (debug, differential, free-threaded, ASAN, UBSAN, RAM-disk)
 
 ## Related
