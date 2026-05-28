@@ -1,6 +1,6 @@
 # CPython JIT Compiler Fuzzing
 
-Coverage-guided fuzzing campaign and low-memory stress testing framework targeting CPython's experimental Tier 2 JIT compiler. Masters thesis research, UCI 2026.
+Coverage-guided fuzzing campaign and low-memory stress testing framework targeting CPython's experimental Tier 2 JIT compiler. 
 
 ## Overview
 
