@@ -12,7 +12,7 @@ Uses lafleur, a UOP edge coverage-guided evolutionary fuzzer, to target CPython 
 
 ## Track 2 — Low-memory stress testing
 
-An 11-phase framework testing JIT behavior under memory pressure using ulimit virtual memory caps, LD_PRELOAD fault injection targeting JIT executable page allocations, deterministic per-allocation failure walking via a direct patch to `jit_alloc` in `Python/jit.c`, concurrent thread stress testing, ASAN under pressure, trace cache exhaustion, trace invalidation racing, real-world package testing via labeille, lafleur mutations under memory pressure, libfiu precise fault injection, and performance characterization. Developed in collaboration with a CPython JIT maintainer.
+An 11-phase framework testing JIT behavior under memory pressure using ulimit virtual memory caps, LD_PRELOAD fault injection targeting JIT executable page allocations, deterministic per-allocation failure walking via a direct patch to `jit_alloc` in `Python/jit.c`, concurrent thread stress testing, ASAN under pressure, trace cache exhaustion, trace invalidation racing, real-world package testing via labeille, lafleur mutations under memory pressure, libfiu precise fault injection, and performance characterization. 
 
 ## Contents
 
@@ -23,9 +23,9 @@ An 11-phase framework testing JIT behavior under memory pressure using ulimit vi
 - `gh144681_crash.py` — minimized reproducer for gh-144681, confirmed to crash on CPython 3.15.0a6+ (commit 6908372fb81) and pass cleanly on 3.15.0a7+ (commit c32e264227b)
 - `lowmem_setup.tar.gz` — complete low-memory stress testing framework including `fail_mmap.c`, `fail_malloc.c`, `harness.py`, and all 11 phase runner scripts
 
-## Compatibility Fixes
+## Compatibility Changes
 
-Four bugs in lafleur prevented it from working on CPython 3.15. All were diagnosed and fixed during this campaign:
+Four compatibility issues in lafleur prevented it from working on CPython 3.15. All were diagnosed and resolved during this campaign:
 
 1. **UOP regex** — CPython 3.15 appends register suffixes to optimized UOP names. Fixed in `coverage.py` line 45.
 2. **Missing UOP names** — Four new UOP names in CPython 3.15 were absent from lafleur's known set. Fixed in `uop_names.py`.
